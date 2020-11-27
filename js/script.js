@@ -9,10 +9,10 @@ fetch(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?CMC_PRO_API_KEY=$
     })
     .then((api) => {
 
+        var texto = "";
+
         for (let i = 0; i <= 10; i++) {
             console.log(api);
-
-            var texto = "";
 
             texto += `
         <div clas='media'>
@@ -24,10 +24,9 @@ fetch(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?CMC_PRO_API_KEY=$
         </div>
         `;
 
-        document.getElementById('coins').innerHTML = texto;
+            document.getElementById('coins').innerHTML = texto;
         }
     })
     .catch((error) => {
         console.error(error.message);
     });
-
